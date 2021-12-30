@@ -1,0 +1,26 @@
+<div class="alert alert-info text-center" role="alert" *ngIf="loading">
+    <h4>Cargando...</h4>
+    <p><i class="fa f-sync fa-spinner"></i></p>
+</div>
+<div class="alert alert-info text-center" role="alert" *ngIf="error">
+    <h4>Error</h4>
+    <p>
+        {{ error | json }}
+    </p>
+</div>
+<div class="card mb-3" style="max-width: 900px;" *ngIf="usuario">
+    <div class="row g-0">
+      <div class="col-md-4">
+        <img [src]="usuario?.avatar" [alt]="usuario?.first_name" class="img-fluid rounded-start" >
+      </div>
+        <div class="col-md-8">
+            <div class="card-body">
+            <h5 class="card-title">{{ usuario?.first_name }} {{ usuario?.last_name }}</h5>
+            <p class="card-text">{{ usuario?.email }}</p>
+            </div>
+            <div class="card-footer">
+            <small class="text-muted">ID usuario: {{ usuario?.id }}</small>
+            </div>
+        </div>
+    </div>
+</div>
